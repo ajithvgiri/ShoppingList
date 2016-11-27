@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private RecyclerView recycler;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,15 +63,13 @@ public class MainActivity extends AppCompatActivity {
         // changes will be reflected automatically
         setRealmAdapter(RealmController.with(this).getShoppingList());
 
-//        TextView someTextView = (TextView) findViewById(R.id.textview);
-//        someTextView.setText("Hello World");
-//        someTextView.setPaintFlags(someTextView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 inflater = MainActivity.this.getLayoutInflater();
+
                 View content = inflater.inflate(R.layout.edit_item, null);
                 final EditText editTitle = (EditText) content.findViewById(R.id.title);
                 final EditText editAuthor = (EditText) content.findViewById(R.id.author);
